@@ -3,7 +3,7 @@ export default {
   target: "static",
   app: {
     head: {
-      title: "National Profile Admin",
+      title: "Erranders",
       htmlAttrs: { lang: "en" },
       meta: [
         { charset: "utf-8" },
