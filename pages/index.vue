@@ -1,7 +1,7 @@
 <template>
   <main class="">
     <LandingHeroSection></LandingHeroSection>
-    <LandingMealsCarousel></LandingMealsCarousel>
+    <LandingMealsCarousel id="meals"></LandingMealsCarousel>
     <section class="max-w-screen-2xl mx-auto space-y-10">
       <div class="flex justify-center items-center flex-col gap-y-2 container px-6 py-6 mx-auto">
         <img src="@/assets/img/location_unserviceable.png" class="h-60 w-60" data-aos="fade-up" />
@@ -26,7 +26,7 @@
         </fieldset>
       </div>
     </section>
-    <LandingExternalErrands></LandingExternalErrands>
+    <LandingExternalErrands id="market"></LandingExternalErrands>
     <LandingSupportSection></LandingSupportSection>
     <LandingAffliators></LandingAffliators>
     <LandingTestimonials></LandingTestimonials>

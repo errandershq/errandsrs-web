@@ -1,46 +1,75 @@
 <template>
-    <nav x-data="{ isOpen: false }" class="relative bg-white shadow dark:bg-gray-800">
-        <div class="container px-6 py-6 mx-auto md:flex md:justify-between md:items-center">
-            <div class="flex items-center justify-between">
-                <a href="#">
-                    <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
+    <header class="absolute inset-x-0 top-0 z-50 border-b border-gray-100 shadow bg-white">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Your Company</span>
+                    <img class="h-16 w-auto" src="@/assets/img/logo.png" alt="">
                 </a>
-    
-                <!-- Mobile menu button -->
-                <div class="flex lg:hidden">
-                    <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
-                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
-                        </svg>
-                
-                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            </div>
+            <div class="flex lg:hidden">
+                <button @click="showSideBar = true" type="button"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
+                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
+                <a href="#market" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
+                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
+                        aria-hidden="true">&rarr;</span></a>
+            </div>
+        </nav>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div class="lg:hidden" role="dialog" aria-modal="true" v-if="showSideBar">
+            <!-- Background backdrop, show/hide based on slide-over state. -->
+            <div class="fixed inset-0 z-50"></div>
+            <div
+                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Your Company</span>
+                        <img class="h-16 w-auto" src="@/assets/img/logo.png" alt="">
+                    </a>
+                    <button @click="showSideBar = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Close menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
-            </div>
-    
-            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-            <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
-                <div class="flex flex-col md:flex-row md:mx-6">
-                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Home</a>
-                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Shop</a>
-                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">Contact</a>
-                    <a class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0" href="#">About</a>
-                </div>
-    
-                <div class="flex justify-center md:block">
-                    <a class="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" href="#">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-    
-                        <span class="absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full"></span>
-                    </a>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+                            <a href="#"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
+                            <a href="#market"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+                        </div>
+                        <div class="py-6">
+                            <nuxt-link to="/login"
+                                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
+                                in</nuxt-link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 </template>
 
 <script setup lang="ts">

@@ -24,7 +24,7 @@
 
               <div class="flex items-center justify-between px-3 py-2 bg-gray-200 dark:bg-gray-700">
                 <span class="font-medium text-gray-800 dark:text-gray-200">{{ image.price }}</span>
-                <button
+                <button @click="addToCart(image)"
                   class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add
                   to cart</button>
               </div>
@@ -107,6 +107,10 @@ onUnmounted(() => {
     clearInterval(interval.value);
   }
 })
+const router = useRouter()
+const addToCart = (itm) => {
+  router.push('/resturant/product')
+}
 </script>
 
 <style scoped>
