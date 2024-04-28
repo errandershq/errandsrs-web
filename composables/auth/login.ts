@@ -49,13 +49,13 @@ export const useLogin = () => {
         autoClose: 5000,
         dangerouslyHTMLString: true,
       });
-      router.push(`${router.options.history.state.back}`);
-      // console.log(router.options.history.state)
-      // if (router.options.history.state.back !== "/") {
-        
-      // } else {
-      //   router.push("/dashboard");
-      // }
+      if(router.options.history.state.back === '/signup'){
+        router.push('/dashboard')
+      }
+
+      if(router.options.history.state.back !== '/login' || router.options.history.state.back !== '/login'){
+        router.push(`${router.options.history.state.back}`);
+      }
     } catch (error) {
       useNuxtApp().$toast.error("Something went wrong!", {
         autoClose: 5000,
