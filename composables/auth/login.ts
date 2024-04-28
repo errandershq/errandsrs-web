@@ -49,11 +49,16 @@ export const useLogin = () => {
         autoClose: 5000,
         dangerouslyHTMLString: true,
       });
-      if(router.options.history.state.back === '/signup'){
+      console.log(router.options.history.state, 'here')
+      const previousRoute = router.options.history.state.back
+      const likelyDashboardRedirectPaths = ['/signup?page=delivery-agent', '/signup?page=user', '/signup?page=store-agent']
+      if(likelyDashboardRedirectPaths.includes(previousRoute)){
         router.push('/dashboard')
       }
 
-      if(router.options.history.state.back !== '/login' || router.options.history.state.back !== '/login'){
+      const likelyBackPaths = ['/login', '/signup?page=delivery-agent', '/signup?page=user', '/signup?page=store-agent']
+
+      if(!likelyBackPaths.includes(previousRoute)){
         router.push(`${router.options.history.state.back}`);
       }
     } catch (error) {

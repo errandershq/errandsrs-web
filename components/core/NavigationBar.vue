@@ -26,8 +26,8 @@
                     <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <nuxt-link v-if="!isLoggedIn" to="/login" class="text-sm font-semibold leading-6 text-gray-900">Log
-                        in<span aria-hidden="true">&rarr;</span></nuxt-link>
+                    <NuxtLink v-if="!isLoggedIn" to="/login" class="text-sm font-semibold leading-6 text-gray-900">Log
+                        in<span aria-hidden="true">&rarr;</span></NuxtLink>
                     <span @click="isOpen = !isOpen" class="relative inline-block cursor-pointer" v-if="isLoggedIn">
                         <img class="h-10 w-10 rounded-full"
                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
@@ -70,13 +70,14 @@
                                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
                             </div>
                             <div class="py-6">
-                                <nuxt-link to="/login"
+                                <!-- <NuxtLink to="/login"
                                     class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
-                                    in</nuxt-link>
+                                    in</NuxtLink> -->
+                                    <NuxtLink to="/login" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Login</NuxtLink>
                             </div>
                             <div class="py-6">
-                                <nuxt-link @click.native="handleLogout" to="#"
-                                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Logout</nuxt-link>
+                                <NuxtLink @click.native="handleLogout" to="#"
+                                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Logout</NuxtLink>
                             </div>
                         </div>
                     </div>

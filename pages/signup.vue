@@ -42,7 +42,7 @@
           </div>
 
           <div v-if="route.query.page === 'options'" class="w-full">
-            <h2 class="font-semibold text-sm pt-6 lg:text-2xl">Select signup option</h2>
+            <h2 class="font-semibold text-base pt-6 lg:text-2xl">Select signup option</h2>
             <fieldset class="space-y-4 w-full">
               <legend class="sr-only">Delivery</legend>
 
@@ -50,14 +50,16 @@
                 <label for="delivery-agent"
                   class="flex cursor-pointer justify-between gap-4 rounded-lg border border-gray-100 bg-white p-4 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-blue-500 has-[:checked]:ring-1 has-[:checked]:ring-blue-500">
                   <div>
-                    <p class="text-gray-700 text-lg">Delivery Champions</p>
+                    <p class="text-gray-700 text-base font-light">Delivery Champions</p>
 
-                    <p class="mt-1 text-gray-900">Campus Couriers efficiently handle the delivery of orders throughout
+                    <p class="mt-1 text-gray-900 text-sm font-light leading-relaxed">Campus Couriers efficiently
+                      handle the
+                      delivery of orders throughout
                       the university, ensuring timely and reliable service.</p>
                   </div>
 
                   <input type="radio" v-model="form.userType" name="DeliveryOption" value="delivery-agent"
-                    id="delivery-agent" class="size-5 border-gray-300 text-blue-500" checked />
+                    id="delivery-agent" class="border-gray-300 text-blue-500 h-10 w-10" />
                 </label>
               </div>
 
@@ -65,14 +67,16 @@
                 <label for="vendors"
                   class="flex cursor-pointer justify-between gap-4 rounded-lg border border-gray-100 bg-white p-4 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-blue-500 has-[:checked]:ring-1 has-[:checked]:ring-blue-500">
                   <div>
-                    <p class="text-gray-700 text-lg">Market Masters</p>
+                    <p class="text-gray-700 text-base font-light">Market Masters</p>
 
-                    <p class="mt-1 text-gray-900">Curators supply essential products tailored for university life,
+                    <p class="mt-1 text-gray-900 text-sm font-light leading-relaxed">Curators supply essential
+                      products tailored
+                      for university life,
                       ranging from academic materials to dorm necessities.</p>
                   </div>
 
                   <input type="radio" v-model="form.userType" name="DeliveryOption" value="store-agent" id="vendors"
-                    class="size-5 border-gray-300 text-blue-500" />
+                    class="border-gray-300 text-blue-500 h-10 w-10" />
                 </label>
               </div>
 
@@ -80,15 +84,16 @@
                 <label for="customer"
                   class="flex cursor-pointer justify-between gap-4 rounded-lg border border-gray-100 bg-white p-4 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-blue-500 has-[:checked]:ring-1 has-[:checked]:ring-blue-500">
                   <div>
-                    <p class="text-gray-700 text-lg">Patron Partners</p>
+                    <p class="text-gray-700 text-base font-light">Patron Partners</p>
 
-                    <p class="mt-1 text-gray-900">Scholar Shoppers are the university’s students, faculty, and staff who
+                    <p class="mt-1 text-gray-900 text-sm font-light leading-relaxed">University’s
+                      students, faculty, and staff who
                       use Erranders for convenient access to a wide range of products suited to their campus lifestyle.
                     </p>
                   </div>
 
                   <input type="radio" v-model="form.userType" name="DeliveryOption" value="user" id="customer"
-                    class="size-5 border-gray-300 text-blue-500" />
+                    class="border-gray-300 text-blue-500 h-10 w-10" />
                 </label>
               </div>
 
@@ -154,7 +159,7 @@
             <div class="col-span-6">
               <label for="MarketingAccept" class="flex gap-4">
                 <input type="checkbox" id="MarketingAccept" name="marketing_accept"
-                  class="size-5 rounded-md border-gray-200 bg-white shadow-sm" />
+                  class="size-5 rounded-md border-gray-200 bg-white shadow-sm h-6 w-6" />
 
                 <span class="text-sm text-gray-700">
                   I want to receive emails about events, product updates and company announcements.
