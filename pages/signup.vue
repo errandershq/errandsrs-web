@@ -42,7 +42,7 @@
           </div>
 
           <div v-if="route.query.page === 'options'" class="w-full">
-            <h2 class="font-semibold text-2xl">Select signup option</h2>
+            <h2 class="font-semibold text-sm pt-6 lg:text-2xl">Select signup option</h2>
             <fieldset class="space-y-4 w-full">
               <legend class="sr-only">Delivery</legend>
 
