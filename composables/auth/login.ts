@@ -36,40 +36,48 @@ export const useLogin = () => {
   const loading = ref(false);
   const handleLogin = async () => {
     loading.value = true;
-    try {
-      const payload = {
-        email: loginPayload.value.email,
-        password: loginPayload.value.password,
-      };
-      const response = await authApiFactory.login(payload);
+    const payload = {
+      email: loginPayload.value.email,
+      password: loginPayload.value.password,
+    };
+    await authApiFactory.login(payload).then((response) => {
       runtimeData.user.value = response.data.user;
       localstorageData.token.value = response.data?.token;
       runtimeData.token.value = response.data?.token;
-      useNuxtApp().$toast.success("Welcome back.", {
-        autoClose: 5000,
-        dangerouslyHTMLString: true,
-      });
-      console.log(router.options.history.state, 'here')
-      const previousRoute = router.options.history.state.back
-      const likelyDashboardRedirectPaths = ['/signup?page=delivery-agent', '/signup?page=user', '/signup?page=store-agent']
-      if(likelyDashboardRedirectPaths.includes(previousRoute)){
-        router.push('/dashboard')
+      const previousRoute = router.options?.history?.state?.back;
+      console.log(router.options, 'ghjk')
+      const likelyDashboardRedirectPaths = [
+        "/",
+        "/signup?page=delivery-agent",
+        "/signup?page=user",
+        "/signup?page=store-agent",
+      ];
+      const likelyBackPaths = [
+        "/login",
+        "/signup?page=delivery-agent",
+        "/signup?page=user",
+        "/signup?page=store-agent",
+      ];
+      if (likelyDashboardRedirectPaths.includes(previousRoute)) {
+        router.push("/dashboard");
       }
 
-      const likelyBackPaths = ['/login', '/signup?page=delivery-agent', '/signup?page=user', '/signup?page=store-agent']
-
-      if(!likelyBackPaths.includes(previousRoute)){
+      if (!likelyBackPaths.includes(previousRoute)) {
         router.push(`${router.options.history.state.back}`);
       }
-    } catch (error) {
+
+      if(previousRoute === '/'){
+        router.push("/dashboard");
+      }
+    }).catch((error) => {
+      console.log(error)
       useNuxtApp().$toast.error("Something went wrong!", {
         autoClose: 5000,
         dangerouslyHTMLString: true,
       });
-      return error;
-    } finally {
+    }).finally(() => {
       loading.value = false;
-    }
+    })
   };
 
   const logOut = () => {
