@@ -9,7 +9,7 @@
         <p class="text-center text-gray-600" data-aos="fade-up">We don’t have any services here till now. Try changing location.</p>
       </div>
       <div class="container px-6 py-6 mx-auto">
-        <h1 class="font-semibold text-lg" data-aos="fade-up">We deliver to popular places like</h1>
+        <h1 class="font-semibold text-xl font-serif" data-aos="fade-up">Order from popular places like</h1>
         <fieldset class="space-y-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
           <legend class="sr-only" data-aos="fade-up">Delivery</legend>
           <div v-for="place, idx in popularPlaces" :key="idx" @click="handleSelectedLocation(place)" data-aos="fade-up">
@@ -44,7 +44,7 @@ const { popularPlaces } = usePopularPlaces()
 //   router.push('/login');
 // });
 const handleSelectedLocation = (place: any) => {
-  router.push(`/resturant/${place.value}`)
+  router.push({path: '/resturant', query: { type: place.value}})
   // router.push({ path: route.path, query: { location: place.value } })
 }
 </script>

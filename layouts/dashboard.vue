@@ -190,24 +190,16 @@
 
 <script setup lang="ts">
 import { useLogin } from '@/composables/auth/login'
-import organizationLogo from '../assets/icons/organization.svg'
-import workflowLogo from '../assets/icons/workflow.svg'
-const { logOut, localstorageDate } = useLogin()
+const { logOut, localstorageData } = useLogin()
 const isOpen = ref(false)
 const route = useRoute()
-
-const sidebarItems = [
-  { icon: organizationLogo, name: 'Dashboard', route: '/dashboard/organization' },
-  { icon: workflowLogo, name: 'Workflow', route: '/dashboard/workflow' },
-  { icon: workflowLogo, name: 'Document', route: '/dashboard/document' },
-];
 
 function getNavItemClass(itemRoute: any) {
   return route.path === itemRoute ? 'active' : '';
 }
 
 const user = computed(() => {
-  return `${localstorageDate.user.value.firstName} ${localstorageDate.user.value.lastName}`
+  return `${localstorageData.user.value.firstName} ${localstorageData.user.value.lastName}`
 })
 
 </script>

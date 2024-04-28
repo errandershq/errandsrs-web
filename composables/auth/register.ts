@@ -1,22 +1,42 @@
 import { authApiFactory } from "@/apiFactory/auth";
-
+const route = useRoute()
 export const useRegister = () => {
   const loading = ref(false);
   const registerPayload = ref({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
+    phone: "",
+    role: "",
+    address: {
+      addr1: "",
+      addr2: "",
+      city: "",
+      state: "",
+      country: "",
+      zip: "",
+    },
   });
 
   const handleRegister = async () => {
     loading.value = true;
     try {
       const payload = {
-        firstName: registerPayload.value.firstName,
-        lastName: registerPayload.value.lastName,
+        role: route.query.page,
+        firstname: registerPayload.value.firstname,
+        lastname: registerPayload.value.lastname,
         email: registerPayload.value.email,
         password: registerPayload.value.password,
+        phone: registerPayload.value.phone,
+        address: {
+          addr1: registerPayload.value.address.addr1,
+          addr2: registerPayload.value.address.addr2,
+          city: registerPayload.value.address.city,
+          state: registerPayload.value.address.state,
+          country: registerPayload.value.address.city,
+          zip: registerPayload.value.address.zip,
+        },
       };
 
       const response = await authApiFactory.register(payload);
@@ -38,10 +58,12 @@ export const useRegister = () => {
 
   const isFormEmpty = computed(() => {
     return !!(
-      registerPayload.value.firstName &&
-      registerPayload.value.lastName &&
+      registerPayload.value.firstname &&
+      registerPayload.value.lastname &&
       registerPayload.value.email &&
-      registerPayload.value.password
+      registerPayload.value.password &&
+      registerPayload.value.phone &&
+      registerPayload.value.address.addr1
     );
   });
 

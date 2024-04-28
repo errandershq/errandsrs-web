@@ -22,6 +22,23 @@ export default {
     // Axios options here
     timeout: 10000, // Example: set timeout to 10 seconds
   },
+  // auth: {
+  //   strategies: {
+  //     google: {
+  //       clientId: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com',
+  //       codeChallengeMethod: '',
+  //       responseType: 'token id_token',
+  //       redirectUri: 'YOUR_REDIRECT_URI',
+  //       scope: ['openid', 'profile', 'email'],
+  //     }
+  //   },
+  //   redirect: {
+  //     login: '/login',
+  //     logout: '/',
+  //     callback: '/login',
+  //     home: '/'
+  //   }
+  // }
   // buildModules: [
   //   '@nuxtjs/moment'
   // ]

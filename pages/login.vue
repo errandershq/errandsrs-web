@@ -1,28 +1,30 @@
 <template>
   <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-        alt="Your Company">
-      <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account
+      <img class="mx-auto h-32 w-32" src="@/assets/img/logo.png" alt="Your Company">
+      <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account
       </h2>
     </div>
 
-    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
+    <div class="mt-4 sm:mx-auto sm:w-full sm:max-w-[480px]">
       <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
-        <form class="space-y-6" action="#" method="POST">
+        <form @submit.prevent="handleLogin" class="space-y-6">
           <div>
             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
             <div class="mt-2">
-              <input id="email" name="email" type="email" autocomplete="email" required
+              <input id="email" v-model="loginPayload.email" name="email" type="email"
                 class="block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-6 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
             </div>
           </div>
 
-          <div>
+          <div class="relative">
             <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
             <div class="mt-2">
-              <input id="password" name="password" type="password" autocomplete="current-password" required
+              <input id="password" v-model="loginPayload.password" name="password"
+                :type="showPassword ? 'text' : 'password'"
                 class="block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-6 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              <img @click="showPassword = !showPassword" :src="eye" alt=""
+                class="absolute cursor-pointer top-12 right-4 h-6 w-6">
             </div>
           </div>
 
@@ -39,9 +41,15 @@
           </div>
 
           <div>
-            <button type="submit"
-              class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
-              in</button>
+            <button type="submit" :disabled="!isFormEmpty || loading"
+              class="flex w-full disabled:cursor-not-allowed disabled:opacity-25 justify-center rounded-md bg-indigo-600 px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <template v-if="loading">
+                <div class="flex items-center">
+                  <CoreButtonSpinner /> Processing
+                </div>
+              </template>
+              <span v-else>Sign In</span>
+            </button>
           </div>
         </form>
 
@@ -90,7 +98,8 @@
 
       <p class="mt-10 text-center text-sm text-gray-500">
         Not a member?
-        <nuxt-link to="/signup" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign Up</nuxt-link>
+        <nuxt-link to="/signup?page=options" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign
+          Up</nuxt-link>
       </p>
     </div>
   </div>
@@ -98,10 +107,18 @@
 </template>
 
 <script setup lang="ts">
+import eyeOpen from '@/assets/icons/eye-open.svg'
+import eyeClose from '@/assets/icons/eye-close.svg'
 import { useLogin } from '@/composables/auth/login'
 const { handleLogin, loginPayload, loading, isFormEmpty } = useLogin()
 definePageMeta({
   layout: 'authentication'
 })
+
+const eye = computed(() => {
+  return !showPassword.value ? eyeClose : eyeOpen
+})
+
+const showPassword = ref(false)
 
 </script>
