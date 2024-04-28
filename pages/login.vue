@@ -13,7 +13,7 @@
             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
             <div class="mt-2">
               <input id="email" v-model="loginPayload.email" name="email" type="email"
-                class="block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-6 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                class="w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 py-3 border pl-3 shadow-sm">
             </div>
           </div>
 
@@ -22,7 +22,7 @@
             <div class="mt-2">
               <input id="password" v-model="loginPayload.password" name="password"
                 :type="showPassword ? 'text' : 'password'"
-                class="block w-full rounded-md border-0 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 pl-6 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                class="w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 py-3 border pl-3 shadow-sm">
               <img @click="showPassword = !showPassword" :src="eye" alt=""
                 class="absolute cursor-pointer top-12 right-4 h-6 w-6">
             </div>

@@ -75,7 +75,7 @@
             </div>
           </div> -->
 
-          <form class="" @submit.prevent="handlePayment">
+          <form class="" @submit.prevent="handleCheckoutPayment">
             <div class="mt-6 flex space-x-2">
               <div class="flex h-5 items-center">
                 <input v-model="agreedToTerms" id="terms" name="terms" type="checkbox"
@@ -159,10 +159,35 @@
 </template>
 
 <script setup lang="ts">
+import Swal from "sweetalert2";
+import { useLogin } from '@/composables/auth/login';
+const { isLoggedIn } = useLogin()
 import { useFlutterwaveSDK } from '@/composables/payment/flutterwave'
 const { handlePayment, paymentForm } = useFlutterwaveSDK()
 const router = useRouter()
 const showOrderSummary = ref(false)
 const agreedToTerms = ref(false)
+
+const handleCheckoutPayment = () => {
+  if (isLoggedIn.value) {
+    handlePayment()
+  } else {
+    Swal.fire({
+      title: "OOPS!!!",
+      text: "You need to be LoggedIn before you can pay for your order",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Proceed to login",
+    }).then((result) => {
+      if (result.value) {
+        router.push('/login')
+      } else {
+        Swal.fire("Cancelled", "Action was cancelled", "info");
+      }
+    });
+  }
+}
 
 </script>

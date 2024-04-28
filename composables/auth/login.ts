@@ -2,6 +2,9 @@
 import { authApiFactory } from "@/apiFactory/auth";
 import { useStorage } from "@vueuse/core";
 import Swal from "sweetalert2";
+import { useReferrer } from "@/composables/core/useReferrer";
+const router = useRouter();
+const { referrer, redirectToReferrer } = useReferrer();
 const runtimeData = {
   user: ref({} as any),
   token: ref(""),
@@ -46,8 +49,13 @@ export const useLogin = () => {
         autoClose: 5000,
         dangerouslyHTMLString: true,
       });
-      useRouter().push("/dashboard");
-      return response.data;
+      router.push(`${router.options.history.state.back}`);
+      // console.log(router.options.history.state)
+      // if (router.options.history.state.back !== "/") {
+        
+      // } else {
+      //   router.push("/dashboard");
+      // }
     } catch (error) {
       useNuxtApp().$toast.error("Something went wrong!", {
         autoClose: 5000,
