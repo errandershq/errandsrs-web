@@ -1,7 +1,7 @@
 <template>
   <main class="">
     <LandingHeroSection></LandingHeroSection>
-    <Vue3Lottie :animationData="AstronautJSON" :height="200" :width="200" />
+    <Vue3Lottie :animationData="RunnerJSON" :height="300" :width="200" />
     <LandingMealsCarousel id="meals"></LandingMealsCarousel>
     <section class="max-w-screen-2xl mx-auto space-y-10">
       <div class="flex justify-center items-center flex-col gap-y-2 container px-6 py-6 mx-auto">
@@ -38,7 +38,7 @@
 </template>
 <script setup lang="ts">
 import { Vue3Lottie } from 'vue3-lottie'
-import AstronautJSON from '@/static/runner.json'
+import RunnerJSON from '../static/runner.json'
 const router = useRouter()
 const route = useRoute()
 import { usePopularPlaces } from '@/composables/cities'
