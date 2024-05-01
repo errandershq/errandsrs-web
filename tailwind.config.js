@@ -27,6 +27,20 @@ module.exports = {
           925: "#0d0d0d",
         },
       },
+      components: {
+        'cone': {
+          borderLeft: '10px solid transparent',
+          borderRight: '10px solid transparent',
+          borderBottom: '20px solid currentColor',
+          top: '-10px',
+        },
+        'line': {
+          backgroundColor: '#D1D5DB', // Tailwind color gray-300
+          height: '1px',
+          width: '100%',
+          position: 'absolute',
+        }
+      }
     },
   },
   variants: {

@@ -3,6 +3,7 @@ import { authApiFactory } from "@/apiFactory/auth";
 import { useStorage } from "@vueuse/core";
 import Swal from "sweetalert2";
 import { useReferrer } from "@/composables/core/useReferrer";
+
 const router = useRouter();
 const { referrer, redirectToReferrer } = useReferrer();
 const runtimeData = {
@@ -35,49 +36,56 @@ const loginPayload = ref({
 export const useLogin = () => {
   const loading = ref(false);
   const handleLogin = async () => {
+    const router = useRouter();
     loading.value = true;
     const payload = {
       email: loginPayload.value.email,
       password: loginPayload.value.password,
     };
-    await authApiFactory.login(payload).then((response) => {
-      runtimeData.user.value = response.data.user;
-      localstorageData.token.value = response.data?.token;
-      runtimeData.token.value = response.data?.token;
-      const previousRoute = router.options?.history?.state?.back;
-      console.log(router.options, 'ghjk')
-      const likelyDashboardRedirectPaths = [
-        "/",
-        "/signup?page=delivery-agent",
-        "/signup?page=user",
-        "/signup?page=store-agent",
-      ];
-      const likelyBackPaths = [
-        "/login",
-        "/signup?page=delivery-agent",
-        "/signup?page=user",
-        "/signup?page=store-agent",
-      ];
-      if (likelyDashboardRedirectPaths.includes(previousRoute)) {
-        router.push("/dashboard");
-      }
+    await authApiFactory
+      .login(payload)
+      .then((response) => {
+        console.log(response);
+        if (typeof response !== "undefined") {
+          runtimeData.user.value = response?.data?.user;
+          localstorageData.token.value = response?.data?.token;
+          runtimeData.token.value = response?.data?.token;
+          const previousRoute = router?.options?.history?.state?.back;
+          const likelyDashboardRedirectPaths = [
+            "/",
+            "/signup?page=delivery-agent",
+            "/signup?page=user",
+            "/signup?page=store-agent",
+          ];
+          const likelyBackPaths = [
+            "/login",
+            "/signup?page=delivery-agent",
+            "/signup?page=user",
+            "/signup?page=store-agent",
+          ];
+          if (likelyDashboardRedirectPaths.includes(previousRoute)) {
+            router.push("/dashboard");
+          }
 
-      if (!likelyBackPaths.includes(previousRoute)) {
-        router.push(`${router.options.history.state.back}`);
-      }
+          if (!likelyBackPaths.includes(previousRoute)) {
+            router.push(`${router.options.history.state.back}`);
+          }
 
-      if(previousRoute === '/'){
-        router.push("/dashboard");
-      }
-    }).catch((error) => {
-      console.log(error)
-      useNuxtApp().$toast.error("Something went wrong!", {
-        autoClose: 5000,
-        dangerouslyHTMLString: true,
+          if (previousRoute === "/") {
+            router.push("/dashboard");
+          }
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        useNuxtApp().$toast.error("Something went wrong!", {
+          autoClose: 5000,
+          dangerouslyHTMLString: true,
+        });
+      })
+      .finally(() => {
+        loading.value = false;
       });
-    }).finally(() => {
-      loading.value = false;
-    })
   };
 
   const logOut = () => {

@@ -21,12 +21,12 @@
         </button>
       </div>
     </section>
+    <CoreChatbotIcon />
   </div>
 </template>
 
 <script setup lang="ts">
 const isOpen = ref(false)
-
 onMounted(() => {
   isOpen.value = true
 })

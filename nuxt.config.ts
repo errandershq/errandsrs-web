@@ -11,6 +11,12 @@ export default {
         { name: "format-detection", content: "telephone=no" },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }],
+      script: [
+        {
+          id: 'tawk',
+          src: '/js/chatbot.js'
+        }
+      ]
     },
   },
   modules: ["@nuxtjs/tailwindcss"],

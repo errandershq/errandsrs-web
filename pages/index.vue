@@ -39,12 +39,7 @@ const router = useRouter()
 const route = useRoute()
 import { usePopularPlaces } from '@/composables/cities'
 const { popularPlaces } = usePopularPlaces()
-// onMounted(() => {
-//   const router = useRouter()
-//   router.push('/login');
-// });
 const handleSelectedLocation = (place: any) => {
   router.push({path: '/resturant', query: { type: place.value}})
-  // router.push({ path: route.path, query: { location: place.value } })
 }
 </script>
