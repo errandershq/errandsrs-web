@@ -38,7 +38,7 @@
 </template>
 <script setup lang="ts">
 import { Vue3Lottie } from 'vue3-lottie'
-import RunnerJSON from '../static/runner.json'
+import RunnerJSON from '@/assets/runner.json'
 const router = useRouter()
 const route = useRoute()
 import { usePopularPlaces } from '@/composables/cities'
