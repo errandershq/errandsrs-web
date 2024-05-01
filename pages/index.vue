@@ -1,12 +1,14 @@
 <template>
   <main class="">
     <LandingHeroSection></LandingHeroSection>
+    <Vue3Lottie :animationData="AstronautJSON" :height="200" :width="200" />
     <LandingMealsCarousel id="meals"></LandingMealsCarousel>
     <section class="max-w-screen-2xl mx-auto space-y-10">
       <div class="flex justify-center items-center flex-col gap-y-2 container px-6 py-6 mx-auto">
         <img src="@/assets/img/location_unserviceable.png" class="h-60 w-60" data-aos="fade-up" />
         <h1 class="text-2xl font-semibold" data-aos="fade-up"> Location Unserviceable</h1>
-        <p class="text-center text-gray-600" data-aos="fade-up">We don’t have any services here till now. Try changing location.</p>
+        <p class="text-center text-gray-600" data-aos="fade-up">We don’t have any services here till now. Try changing
+          location.</p>
       </div>
       <div class="container px-6 py-6 mx-auto">
         <h1 class="font-semibold text-xl font-serif" data-aos="fade-up">Order from popular places like</h1>
@@ -35,11 +37,13 @@
   </main>
 </template>
 <script setup lang="ts">
+import { Vue3Lottie } from 'vue3-lottie'
+import AstronautJSON from '@/static/runner.json'
 const router = useRouter()
 const route = useRoute()
 import { usePopularPlaces } from '@/composables/cities'
 const { popularPlaces } = usePopularPlaces()
 const handleSelectedLocation = (place: any) => {
-  router.push({path: '/resturant', query: { type: place.value}})
+  router.push({ path: '/resturant', query: { type: place.value } })
 }
 </script>

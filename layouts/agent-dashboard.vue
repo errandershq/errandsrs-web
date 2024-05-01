@@ -157,6 +157,7 @@
             </div>
         </header>
         <slot />
+        <CoreChatbotIcon />
     </main>
 </template>
 

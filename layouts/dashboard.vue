@@ -185,6 +185,8 @@
         </div>
       </main>
     </div>
+
+    <CoreChatbotIcon />
   </div>
 </template>
 

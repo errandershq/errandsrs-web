@@ -1,5 +1,6 @@
 <template>
-<div class="min-h-full">
+<main>
+  <div class="min-h-full">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
     <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
       <!--
@@ -300,4 +301,6 @@
       </main>
     </div>
   </div>
+  <CoreChatbotIcon />
+</main>
 </template>
