@@ -77,7 +77,6 @@ export const useLogin = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
         useNuxtApp().$toast.error("Something went wrong!", {
           autoClose: 5000,
           dangerouslyHTMLString: true,

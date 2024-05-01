@@ -27,7 +27,7 @@ export function useReferrer() {
       try {
         await router.push(redirectTo);
       } catch (error) {
-        console.error('Error redirecting to referrer:', error);
+
         router.push('/')
         // Handle redirect error gracefully (e.g., redirect to home page)
       }
