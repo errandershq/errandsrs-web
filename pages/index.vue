@@ -1,5 +1,5 @@
 <template>
-  <main class="">
+  <main class="">    
     <LandingHeroSection></LandingHeroSection>
     <Vue3Lottie :animationData="RunnerJSON" :height="300" :width="200" />
     <LandingMealsCarousel id="meals"></LandingMealsCarousel>

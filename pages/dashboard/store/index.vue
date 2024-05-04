@@ -1,354 +1,243 @@
 <template>
-          
-    <main>
-        <div class="relative isolate overflow-hidden pt-16">
-          <!-- Secondary navigation -->
-          <header class="pb-4 pt-6 sm:pb-6">
-            <div class="mx-auto flex max-w-7xl flex-wrap items-center gap-6 px-4 sm:flex-nowrap sm:px-6 lg:px-8">
-              <h1 class="text-base font-semibold leading-7 text-gray-900">Cashflow</h1>
-              <div class="order-last flex w-full gap-x-8 text-sm font-semibold leading-6 sm:order-none sm:w-auto sm:border-l sm:border-gray-200 sm:pl-6 sm:leading-7">
-                <a href="#" class="text-indigo-600">Last 7 days</a>
-                <a href="#" class="text-gray-700">Last 30 days</a>
-                <a href="#" class="text-gray-700">All-time</a>
-              </div>
-              <a href="#" @click.prevent="handleNewProduct" class="ml-auto flex items-center gap-x-1 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                <svg class="-ml-1.5 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M10.75 6.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z" />
+  <div class="mt-8 space-y-16">
+    <div class="mx-auto  px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-medium leading-6 text-gray-900">Overview</h2>
+      <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card -->
+        <div class="overflow-hidden rounded-lg bg-white shadow">
+          <div class="p-5">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
                 </svg>
-                New product
+              </div>
+              <div class="ml-5 w-0 flex-1">
+                <dl>
+                  <dt class="truncate text-sm font-medium text-gray-500">Account balance</dt>
+                  <dd>
+                    <div class="text-lg font-medium text-gray-900">$30,659.45</div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 px-5 py-3">
+            <div class="text-sm">
+              <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">View all</a>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-lg bg-white shadow">
+          <div class="p-5">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+                </svg>
+              </div>
+              <div class="ml-5 w-0 flex-1">
+                <dl>
+                  <dt class="truncate text-sm font-medium text-gray-500">Account balance</dt>
+                  <dd>
+                    <div class="text-lg font-medium text-gray-900">$30,659.45</div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 px-5 py-3">
+            <div class="text-sm">
+              <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">View all</a>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-lg bg-white shadow">
+          <div class="p-5">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+                </svg>
+              </div>
+              <div class="ml-5 w-0 flex-1">
+                <dl>
+                  <dt class="truncate text-sm font-medium text-gray-500">Account balance</dt>
+                  <dd>
+                    <div class="text-lg font-medium text-gray-900">$30,659.45</div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 px-5 py-3">
+            <div class="text-sm">
+              <a href="#" class="font-medium text-cyan-700 hover:text-cyan-900">View all</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- More items... -->
+      </div>
+    </div>
+    <!-- <ChartsActivitiesChart /> -->
+
+    <section class="grid grid grid-cols-2 mx-auto gap-x-10  px-4 sm:px-6 lg:px-8">
+      <section class="border rounded-lg shadow border-gray-100">
+        <h2 class="mx-auto mt-8  px-4 text-lg font-medium leading-6 text-gray-900 sm:px-6 lg:px-8">Recent
+          activity</h2>
+
+        <!-- Activity list (smallest breakpoint only) -->
+        <div class="shadow sm:hidden">
+          <ul role="list" class="mt-2 divide-y divide-gray-200 overflow-hidden shadow sm:hidden">
+            <li v-for="itm in 6" :key="itm">
+              <a href="#" class="block bg-white px-4 py-4 hover:bg-gray-50">
+                <span class="flex items-center space-x-4">
+                  <span class="flex flex-1 space-x-2 truncate">
+                    <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+                      aria-hidden="true">
+                      <path fill-rule="evenodd"
+                        d="M1 4a1 1 0 011-1h16a1 1 0 011 1v8a1 1 0 01-1 1H2a1 1 0 01-1-1V4zm12 4a3 3 0 11-6 0 3 3 0 016 0zM4 9a1 1 0 100-2 1 1 0 000 2zm13-1a1 1 0 11-2 0 1 1 0 012 0zM1.75 14.5a.75.75 0 000 1.5c4.417 0 8.693.603 12.749 1.73 1.111.309 2.251-.512 2.251-1.696v-.784a.75.75 0 00-1.5 0v.784a.272.272 0 01-.35.25A49.043 49.043 0 001.75 14.5z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span class="flex flex-col truncate text-sm text-gray-500">
+                      <span class="truncate">Payment to Molly Sanders</span>
+                      <span><span class="font-medium text-gray-900">$20,000</span> USD</span>
+                      <time datetime="2020-07-11">July 11, 2020</time>
+                    </span>
+                  </span>
+                  <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+                    aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </span>
               </a>
+            </li>
+
+            <!-- More transactions... -->
+          </ul>
+
+          <nav class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3"
+            aria-label="Pagination">
+            <div class="flex flex-1 justify-between">
+              <a href="#"
+                class="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Previous</a>
+              <a href="#"
+                class="relative ml-3 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Next</a>
             </div>
-          </header>
-      
-          <!-- Stats -->
-          <div class="border-b border-b-gray-900/10 lg:border-t lg:border-t-gray-900/5">
-            <dl class="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:px-2 xl:px-0">
-              <div class="flex items-baseline flex-wrap justify-between gap-y-2 gap-x-4 border-t border-gray-900/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8">
-                <dt class="text-sm font-medium leading-6 text-gray-500">Revenue</dt>
-                <dd class="text-xs font-medium text-gray-700">+4.75%</dd>
-                <dd class="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900">$405,091.00</dd>
-              </div>
-              <div class="flex items-baseline flex-wrap justify-between gap-y-2 gap-x-4 border-t border-gray-900/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8 sm:border-l">
-                <dt class="text-sm font-medium leading-6 text-gray-500">Overdue invoices</dt>
-                <dd class="text-xs font-medium text-rose-600">+54.02%</dd>
-                <dd class="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900">$12,787.00</dd>
-              </div>
-              <div class="flex items-baseline flex-wrap justify-between gap-y-2 gap-x-4 border-t border-gray-900/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8 lg:border-l">
-                <dt class="text-sm font-medium leading-6 text-gray-500">Outstanding invoices</dt>
-                <dd class="text-xs font-medium text-gray-700">-1.39%</dd>
-                <dd class="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900">$245,988.00</dd>
-              </div>
-              <div class="flex items-baseline flex-wrap justify-between gap-y-2 gap-x-4 border-t border-gray-900/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8 sm:border-l">
-                <dt class="text-sm font-medium leading-6 text-gray-500">Expenses</dt>
-                <dd class="text-xs font-medium text-rose-600">+10.18%</dd>
-                <dd class="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-900">$30,156.00</dd>
-              </div>
-            </dl>
-          </div>
-      
-          <div class="absolute left-0 top-full -z-10 mt-96 origin-top-left translate-y-40 -rotate-90 transform-gpu opacity-20 blur-3xl sm:left-1/2 sm:-ml-96 sm:-mt-10 sm:translate-y-0 sm:rotate-0 sm:transform-gpu sm:opacity-50" aria-hidden="true">
-            <div class="aspect-[1154/678] w-[72.125rem] bg-gradient-to-br from-[#FF80B5] to-[#9089FC]" style="clip-path: polygon(100% 38.5%, 82.6% 100%, 60.2% 37.7%, 52.4% 32.1%, 47.5% 41.8%, 45.2% 65.6%, 27.5% 23.4%, 0.1% 35.3%, 17.9% 0%, 27.7% 23.4%, 76.2% 2.5%, 74.2% 56%, 100% 38.5%)"></div>
-          </div>
+          </nav>
         </div>
-      
-        <div class="space-y-16 py-16 xl:space-y-20">
-          <!-- Recent activity table -->
-          <div>
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h2 class="mx-auto max-w-2xl text-base font-semibold leading-6 text-gray-900 lg:mx-0 lg:max-w-none">Recent activity</h2>
-            </div>
-            <div class="mt-6 overflow-hidden border-t border-gray-100">
-              <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                  <table class="w-full text-left">
-                    <thead class="sr-only">
-                      <tr>
-                        <th>Amount</th>
-                        <th class="hidden sm:table-cell">Client</th>
-                        <th>More details</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="text-sm leading-6 text-gray-900">
-                        <th scope="colgroup" colspan="3" class="relative isolate py-2 font-semibold">
-                          <time datetime="2023-03-22">Today</time>
-                          <div class="absolute inset-y-0 right-full -z-10 w-screen border-b border-gray-200 bg-gray-50"></div>
-                          <div class="absolute inset-y-0 left-0 -z-10 w-screen border-b border-gray-200 bg-gray-50"></div>
-                        </th>
-                      </tr>
-                      <tr>
-                        <td class="relative py-5 pr-6">
-                          <div class="flex gap-x-6">
-                            <svg class="hidden h-6 w-5 flex-none text-gray-400 sm:block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-.75-4.75a.75.75 0 001.5 0V8.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0L6.2 9.74a.75.75 0 101.1 1.02l1.95-2.1v4.59z" clip-rule="evenodd" />
+
+        <!-- Activity table (small breakpoint and up) -->
+        <div class="hidden sm:block ">
+          <div class="mx-auto">
+            <div class="mt-2 flex flex-col">
+              <div class="min-w-full overflow-hidden overflow-x-auto align-middle shadow sm:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead>
+                    <tr>
+                      <th class="bg-gray-50 px-6 py-3 text-left text-sm font-semibold text-gray-900" scope="col">
+                        Transaction
+                      </th>
+                      <th class="bg-gray-50 px-6 py-3 text-right text-sm font-semibold text-gray-900" scope="col">Amount
+                      </th>
+                      <th class="hidden bg-gray-50 px-6 py-3 text-left text-sm font-semibold text-gray-900 md:block"
+                        scope="col">Status</th>
+                      <th class="bg-gray-50 px-6 py-3 text-right text-sm font-semibold text-gray-900" scope="col">Date
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200 bg-white">
+                    <tr class="bg-white" v-for="itm in 6" :key="itm">
+                      <td class="w-full max-w-0 whitespace-nowrap px-6 py-6 text-sm text-gray-900">
+                        <div class="flex">
+                          <a href="#" class="group inline-flex space-x-2 truncate text-sm">
+                            <svg class="h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                              viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd"
+                                d="M1 4a1 1 0 011-1h16a1 1 0 011 1v8a1 1 0 01-1 1H2a1 1 0 01-1-1V4zm12 4a3 3 0 11-6 0 3 3 0 016 0zM4 9a1 1 0 100-2 1 1 0 000 2zm13-1a1 1 0 11-2 0 1 1 0 012 0zM1.75 14.5a.75.75 0 000 1.5c4.417 0 8.693.603 12.749 1.73 1.111.309 2.251-.512 2.251-1.696v-.784a.75.75 0 00-1.5 0v.784a.272.272 0 01-.35.25A49.043 49.043 0 001.75 14.5z"
+                                clip-rule="evenodd" />
                             </svg>
-                            <div class="flex-auto">
-                              <div class="flex items-start gap-x-3">
-                                <div class="text-sm font-medium leading-6 text-gray-900">$7,600.00 USD</div>
-                                <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/20">Paid</div>
-                              </div>
-                              <div class="mt-1 text-xs leading-5 text-gray-500">$500.00 tax</div>
-                            </div>
-                          </div>
-                          <div class="absolute bottom-0 right-full h-px w-screen bg-gray-100"></div>
-                          <div class="absolute bottom-0 left-0 h-px w-screen bg-gray-100"></div>
-                        </td>
-                        <td class="hidden py-5 pr-6 sm:table-cell">
-                          <div class="text-sm leading-6 text-gray-900">Reform</div>
-                          <div class="mt-1 text-xs leading-5 text-gray-500">Website redesign</div>
-                        </td>
-                        <td class="py-5 text-right">
-                          <div class="flex justify-end">
-                            <a href="#" class="text-sm font-medium leading-6 text-indigo-600 hover:text-indigo-500">View<span class="hidden sm:inline"> transaction</span><span class="sr-only">, invoice #00012, Reform</span></a>
-                          </div>
-                          <div class="mt-1 text-xs leading-5 text-gray-500">Invoice <span class="text-gray-900">#00012</span></div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="relative py-5 pr-6">
-                          <div class="flex gap-x-6">
-                            <svg class="hidden h-6 w-5 flex-none text-gray-400 sm:block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.25a.75.75 0 00-1.5 0v4.59L7.3 9.24a.75.75 0 00-1.1 1.02l3.25 3.5a.75.75 0 001.1 0l3.25-3.5a.75.75 0 10-1.1-1.02l-1.95 2.1V6.75z" clip-rule="evenodd" />
-                            </svg>
-                            <div class="flex-auto">
-                              <div class="flex items-start gap-x-3">
-                                <div class="text-sm font-medium leading-6 text-gray-900">$10,000.00 USD</div>
-                                <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-gray-600 bg-gray-50 ring-gray-500/10">Withdraw</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="absolute bottom-0 right-full h-px w-screen bg-gray-100"></div>
-                          <div class="absolute bottom-0 left-0 h-px w-screen bg-gray-100"></div>
-                        </td>
-                        <td class="hidden py-5 pr-6 sm:table-cell">
-                          <div class="text-sm leading-6 text-gray-900">Tom Cook</div>
-                          <div class="mt-1 text-xs leading-5 text-gray-500">Salary</div>
-                        </td>
-                        <td class="py-5 text-right">
-                          <div class="flex justify-end">
-                            <a href="#" class="text-sm font-medium leading-6 text-indigo-600 hover:text-indigo-500">View<span class="hidden sm:inline"> transaction</span><span class="sr-only">, invoice #00011, Tom Cook</span></a>
-                          </div>
-                          <div class="mt-1 text-xs leading-5 text-gray-500">Invoice <span class="text-gray-900">#00011</span></div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="relative py-5 pr-6">
-                          <div class="flex gap-x-6">
-                            <svg class="hidden h-6 w-5 flex-none text-gray-400 sm:block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z" clip-rule="evenodd" />
-                            </svg>
-                            <div class="flex-auto">
-                              <div class="flex items-start gap-x-3">
-                                <div class="text-sm font-medium leading-6 text-gray-900">$2,000.00 USD</div>
-                                <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-red-700 bg-red-50 ring-red-600/10">Overdue</div>
-                              </div>
-                              <div class="mt-1 text-xs leading-5 text-gray-500">$130.00 tax</div>
-                            </div>
-                          </div>
-                          <div class="absolute bottom-0 right-full h-px w-screen bg-gray-100"></div>
-                          <div class="absolute bottom-0 left-0 h-px w-screen bg-gray-100"></div>
-                        </td>
-                        <td class="hidden py-5 pr-6 sm:table-cell">
-                          <div class="text-sm leading-6 text-gray-900">Tuple</div>
-                          <div class="mt-1 text-xs leading-5 text-gray-500">Logo design</div>
-                        </td>
-                        <td class="py-5 text-right">
-                          <div class="flex justify-end">
-                            <a href="#" class="text-sm font-medium leading-6 text-indigo-600 hover:text-indigo-500">View<span class="hidden sm:inline"> transaction</span><span class="sr-only">, invoice #00009, Tuple</span></a>
-                          </div>
-                          <div class="mt-1 text-xs leading-5 text-gray-500">Invoice <span class="text-gray-900">#00009</span></div>
-                        </td>
-                      </tr>
-      
-                      <tr class="text-sm leading-6 text-gray-900">
-                        <th scope="colgroup" colspan="3" class="relative isolate py-2 font-semibold">
-                          <time datetime="2023-03-21">Yesterday</time>
-                          <div class="absolute inset-y-0 right-full -z-10 w-screen border-b border-gray-200 bg-gray-50"></div>
-                          <div class="absolute inset-y-0 left-0 -z-10 w-screen border-b border-gray-200 bg-gray-50"></div>
-                        </th>
-                      </tr>
-                      <tr>
-                        <td class="relative py-5 pr-6">
-                          <div class="flex gap-x-6">
-                            <svg class="hidden h-6 w-5 flex-none text-gray-400 sm:block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-.75-4.75a.75.75 0 001.5 0V8.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0L6.2 9.74a.75.75 0 101.1 1.02l1.95-2.1v4.59z" clip-rule="evenodd" />
-                            </svg>
-                            <div class="flex-auto">
-                              <div class="flex items-start gap-x-3">
-                                <div class="text-sm font-medium leading-6 text-gray-900">$14,000.00 USD</div>
-                                <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/20">Paid</div>
-                              </div>
-                              <div class="mt-1 text-xs leading-5 text-gray-500">$900.00 tax</div>
-                            </div>
-                          </div>
-                          <div class="absolute bottom-0 right-full h-px w-screen bg-gray-100"></div>
-                          <div class="absolute bottom-0 left-0 h-px w-screen bg-gray-100"></div>
-                        </td>
-                        <td class="hidden py-5 pr-6 sm:table-cell">
-                          <div class="text-sm leading-6 text-gray-900">SavvyCal</div>
-                          <div class="mt-1 text-xs leading-5 text-gray-500">Website redesign</div>
-                        </td>
-                        <td class="py-5 text-right">
-                          <div class="flex justify-end">
-                            <a href="#" class="text-sm font-medium leading-6 text-indigo-600 hover:text-indigo-500">View<span class="hidden sm:inline"> transaction</span><span class="sr-only">, invoice #00010, SavvyCal</span></a>
-                          </div>
-                          <div class="mt-1 text-xs leading-5 text-gray-500">Invoice <span class="text-gray-900">#00010</span></div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                            <p class="truncate text-gray-500 group-hover:text-gray-900">Payment to
+                              Molly Sanders</p>
+                          </a>
+                        </div>
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-6 text-right text-sm text-gray-500">
+                        <span class="font-medium text-gray-900">$20,000</span>
+                        USD
+                      </td>
+                      <td class="hidden whitespace-nowrap px-6 py-6 text-sm text-gray-500 md:block">
+                        <span
+                          class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-green-100 text-green-800 capitalize">success</span>
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-6 text-right text-sm text-gray-500">
+                        <time datetime="2020-07-11">July 11, 2020</time>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- Pagination -->
+                <nav class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6"
+                  aria-label="Pagination">
+                  <div class="hidden sm:block">
+                    <p class="text-sm text-gray-700">
+                      Showing
+                      <span class="font-medium">1</span>
+                      to
+                      <span class="font-medium">10</span>
+                      of
+                      <span class="font-medium">20</span>
+                      results
+                    </p>
+                  </div>
+                  <div class="flex flex-1 justify-between gap-x-3 sm:justify-end">
+                    <a href="#"
+                      class="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:ring-gray-400">Previous</a>
+                    <a href="#"
+                      class="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:ring-gray-400">Next</a>
+                  </div>
+                </nav>
               </div>
-            </div>
-          </div>
-      
-          <!-- Recent client list-->
-          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-              <div class="flex items-center justify-between">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Recent clients</h2>
-                <a href="#" class="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500">View all<span class="sr-only">, clients</span></a>
-              </div>
-              <ul role="list" class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3 xl:gap-x-8">
-                <li class="overflow-hidden rounded-xl border border-gray-200">
-                  <div class="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
-                    <img src="https://tailwindui.com/img/logos/48x48/tuple.svg" alt="Tuple" class="h-12 w-12 flex-none rounded-lg bg-white object-cover ring-1 ring-gray-900/10">
-                    <div class="text-sm font-medium leading-6 text-gray-900">Tuple</div>
-                    <div class="relative ml-auto">
-                      <button type="button" class="-m-2.5 block p-2.5 text-gray-400 hover:text-gray-500" id="options-menu-0-button" aria-expanded="false" aria-haspopup="true">
-                        <span class="sr-only">Open options</span>
-                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path d="M3 10a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM8.5 10a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM15.5 8.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
-                        </svg>
-                      </button>
-      
-                      <!--
-                        Dropdown menu, show/hide based on menu state.
-      
-                        Entering: "transition ease-out duration-100"
-                          From: "transform opacity-0 scale-95"
-                          To: "transform opacity-100 scale-100"
-                        Leaving: "transition ease-in duration-75"
-                          From: "transform opacity-100 scale-100"
-                          To: "transform opacity-0 scale-95"
-                      -->
-                      <div class="absolute right-0 z-10 mt-0.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="options-menu-0-button" tabindex="-1">
-                        <!-- Active: "bg-gray-50", Not Active: "" -->
-                        <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem" tabindex="-1" id="options-menu-0-item-0">View<span class="sr-only">, Tuple</span></a>
-                        <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem" tabindex="-1" id="options-menu-0-item-1">Edit<span class="sr-only">, Tuple</span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <dl class="-my-3 divide-y divide-gray-100 px-6 py-4 text-sm leading-6">
-                    <div class="flex justify-between gap-x-4 py-3">
-                      <dt class="text-gray-500">Last invoice</dt>
-                      <dd class="text-gray-700"><time datetime="2022-12-13">December 13, 2022</time></dd>
-                    </div>
-                    <div class="flex justify-between gap-x-4 py-3">
-                      <dt class="text-gray-500">Amount</dt>
-                      <dd class="flex items-start gap-x-2">
-                        <div class="font-medium text-gray-900">$2,000.00</div>
-                        <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-red-700 bg-red-50 ring-red-600/10">Overdue</div>
-                      </dd>
-                    </div>
-                  </dl>
-                </li>
-                <li class="overflow-hidden rounded-xl border border-gray-200">
-                  <div class="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
-                    <img src="https://tailwindui.com/img/logos/48x48/savvycal.svg" alt="SavvyCal" class="h-12 w-12 flex-none rounded-lg bg-white object-cover ring-1 ring-gray-900/10">
-                    <div class="text-sm font-medium leading-6 text-gray-900">SavvyCal</div>
-                    <div class="relative ml-auto">
-                      <button type="button" class="-m-2.5 block p-2.5 text-gray-400 hover:text-gray-500" id="options-menu-1-button" aria-expanded="false" aria-haspopup="true">
-                        <span class="sr-only">Open options</span>
-                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path d="M3 10a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM8.5 10a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM15.5 8.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
-                        </svg>
-                      </button>
-      
-                      <!--
-                        Dropdown menu, show/hide based on menu state.
-      
-                        Entering: "transition ease-out duration-100"
-                          From: "transform opacity-0 scale-95"
-                          To: "transform opacity-100 scale-100"
-                        Leaving: "transition ease-in duration-75"
-                          From: "transform opacity-100 scale-100"
-                          To: "transform opacity-0 scale-95"
-                      -->
-                      <div class="absolute right-0 z-10 mt-0.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="options-menu-1-button" tabindex="-1">
-                        <!-- Active: "bg-gray-50", Not Active: "" -->
-                        <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem" tabindex="-1" id="options-menu-1-item-0">View<span class="sr-only">, SavvyCal</span></a>
-                        <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem" tabindex="-1" id="options-menu-1-item-1">Edit<span class="sr-only">, SavvyCal</span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <dl class="-my-3 divide-y divide-gray-100 px-6 py-4 text-sm leading-6">
-                    <div class="flex justify-between gap-x-4 py-3">
-                      <dt class="text-gray-500">Last invoice</dt>
-                      <dd class="text-gray-700"><time datetime="2023-01-22">January 22, 2023</time></dd>
-                    </div>
-                    <div class="flex justify-between gap-x-4 py-3">
-                      <dt class="text-gray-500">Amount</dt>
-                      <dd class="flex items-start gap-x-2">
-                        <div class="font-medium text-gray-900">$14,000.00</div>
-                        <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/20">Paid</div>
-                      </dd>
-                    </div>
-                  </dl>
-                </li>
-                <li class="overflow-hidden rounded-xl border border-gray-200">
-                  <div class="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
-                    <img src="https://tailwindui.com/img/logos/48x48/reform.svg" alt="Reform" class="h-12 w-12 flex-none rounded-lg bg-white object-cover ring-1 ring-gray-900/10">
-                    <div class="text-sm font-medium leading-6 text-gray-900">Reform</div>
-                    <div class="relative ml-auto">
-                      <button type="button" class="-m-2.5 block p-2.5 text-gray-400 hover:text-gray-500" id="options-menu-2-button" aria-expanded="false" aria-haspopup="true">
-                        <span class="sr-only">Open options</span>
-                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path d="M3 10a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM8.5 10a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM15.5 8.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
-                        </svg>
-                      </button>
-      
-                      <!--
-                        Dropdown menu, show/hide based on menu state.
-      
-                        Entering: "transition ease-out duration-100"
-                          From: "transform opacity-0 scale-95"
-                          To: "transform opacity-100 scale-100"
-                        Leaving: "transition ease-in duration-75"
-                          From: "transform opacity-100 scale-100"
-                          To: "transform opacity-0 scale-95"
-                      -->
-                      <div class="absolute right-0 z-10 mt-0.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="options-menu-2-button" tabindex="-1">
-                        <!-- Active: "bg-gray-50", Not Active: "" -->
-                        <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem" tabindex="-1" id="options-menu-2-item-0">View<span class="sr-only">, Reform</span></a>
-                        <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem" tabindex="-1" id="options-menu-2-item-1">Edit<span class="sr-only">, Reform</span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <dl class="-my-3 divide-y divide-gray-100 px-6 py-4 text-sm leading-6">
-                    <div class="flex justify-between gap-x-4 py-3">
-                      <dt class="text-gray-500">Last invoice</dt>
-                      <dd class="text-gray-700"><time datetime="2023-01-23">January 23, 2023</time></dd>
-                    </div>
-                    <div class="flex justify-between gap-x-4 py-3">
-                      <dt class="text-gray-500">Amount</dt>
-                      <dd class="flex items-start gap-x-2">
-                        <div class="font-medium text-gray-900">$7,600.00</div>
-                        <div class="rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset text-green-700 bg-green-50 ring-green-600/20">Paid</div>
-                      </dd>
-                    </div>
-                  </dl>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
-      </main>
+      </section>
+
+      <ChartsActivitiesChart class="border border-gray-100">
+        <template v-slot:title>
+          <div class="md:flex space-y-4 md:space-y-0 justify-between items-center">
+            <p class="text-[#777e7c] text-sm md:text-lg font-medium">
+              Orders Analytics
+            </p>
+            <div class="flex items-center gap-x-3">
+              <select class="text-sm outline-none font-medium bg-gray-100 rounded-md px-2.5 py-2 w-full">
+                <option>online</option>
+                <option>offline</option>
+              </select>
+              <select class="text-sm outline-none font-medium bg-gray-100 rounded-md px-2.5 py-2 w-full">
+                <option>Daily</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+          </div>
+        </template>
+      </ChartsActivitiesChart>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">
-  definePageMeta({
-    layout: 'agent-dashboard',
-    middleware: 'auth'
-  })
+definePageMeta({
+  layout: 'customer-dashboard',
+  middleware: 'auth'
+})
 </script>
